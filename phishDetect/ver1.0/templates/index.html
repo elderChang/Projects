@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URL Processor</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 300px; /* You can adjust the width as needed */
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 20px;
+            width: 100%;
+            max-width: 600px; /* Adjust the maximum width as needed */
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .urlword{
+            width:100%;
+            padding: 20px;
+            max-width: 600px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter URL to Process</h1>
+    <form method="post">
+        <input type="text" name="url" placeholder="Enter URL here">
+        <button type="submit">Process</button>
+    </form>
+    <div class = "urlword">
+        <div>{{ message0|replace('\n', '<br>')|safe }}</div>
+    </div>
+    <div class="result">
+        <h2>Whois資訊和分類:</h2>
+        <div>{{ message1|replace('\n', '<br>')|safe }}</div>
+    </div>
+    <div class="result">
+        <h2>用Domain來判斷是否為釣魚網站:</h2>
+        <div>{{ message2|replace('\n', '<br>')|safe }}</div>
+    </div>
+    <div class="result">
+        <h2>用RF來判斷是否為釣魚網站:</h2>
+        <div>{{ message3|replace('\n', '<br>')|safe }}</div>
+    </div>
+</body>
+</html>
