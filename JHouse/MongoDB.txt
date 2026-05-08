@@ -1,0 +1,3 @@
+user_name: dino920406_db_user
+password: FeAcUteJkn9gSN9G
+Connection String: mongodb+srv://dino920406_db_user:FeAcUteJkn9gSN9G@cluster0.r4vo2lo.mongodb.net/?appName=Cluster0
